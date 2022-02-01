@@ -12,7 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('nota');
+    return view('welcome');
+});
+
+Route::get('notas', function(){
+    $notas = [
+        /*'Primera Nota',
+        'Segunda Nota',
+        'Terceta Nota',
+        'Cuarta Nota',*/
+    ];
+    return view('notas', ['notas' => $notas]);
 });
 
 Route::get('agregar', function(){
