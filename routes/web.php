@@ -11,23 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('notas', function(){
+Route::get('/', function(){
     $notas = [
-        /*'Primera Nota',
+        'Primera Nota',
         'Segunda Nota',
         'Terceta Nota',
-        'Cuarta Nota',*/
+        'Cuarta Nota',
     ];
     return view('notas', ['notas' => $notas]);
+})->name('listar');
+
+Route::get('notas/{id}', function(){
+    return view('Aqui veremos el detalle de las notas' .$id);
 });
 
 Route::get('agregar', function(){
     return view('agregar');
-});
+})->name('nuevanota');
 
 Route::get('editar', function(){
     return view('editar');
